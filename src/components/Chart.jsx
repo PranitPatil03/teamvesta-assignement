@@ -16,7 +16,7 @@ const Chart = () => {
   }, []);
 
   return (
-    <div className="">
+    <div>
       <Graph></Graph>
     </div>
   );

@@ -2,28 +2,33 @@ import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
 
-const Graph = () => {
+const Graph = ({}) => {
   const [chartOptions, setChartOptions] = useState({
     chart: {
       height: 350,
       type: "line",
       stacked: false,
+      toolbar: {
+        show: false,
+      },
     },
     dataLabels: {
       enabled: false,
     },
-    colors: ["#247BA0"],
+
+    colors: ["#41A1FC"],
     series: [
       {
         name: "Series A",
         type: "line",
         //todo
         // number of requets
-        data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6],
+        data: [0, 2, 4, 6, 8],
       },
     ],
     stroke: {
-      width: [4, 4],
+      curve: "straight",
+      width: [7, 7],
     },
     plotOptions: {
       bar: {
@@ -33,12 +38,15 @@ const Graph = () => {
     xaxis: {
       //todo - apis data here
       // hotel --> shortname
-      categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+      categories: [2009, 2010, 2011, 2012, 2013],
     },
     yaxis: [
       {
+        min: 0,
+        max: 8,
         axisTicks: {
           show: false,
+          color: "#fff",
         },
         axisBorder: {
           show: false,
@@ -57,10 +65,15 @@ const Graph = () => {
       },
     ],
     tooltip: {
-      shared: false,
-      intersect: true,
+      enabled: true,
+      shared: true,
+      followCursor: true,
+      hideEmptySeries: true,
       x: {
-        show: false,
+        show: true,
+      },
+      y: {
+        show: true,
       },
     },
     legend: {
