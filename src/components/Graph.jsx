@@ -38,12 +38,12 @@ const Graph = ({ data }) => {
         yaxis: {
           min: 0,
           max: 8,
-          tickAmount: 4, // Set the number of ticks
-          labels: { 
+          tickAmount: 4,
+          labels: {
             style: { colors: "#808080" },
-            formatter: function(val) {
-              return val % 2 === 0 ? val : val; // Show only even numbers
-            }
+            formatter: function (val) {
+              return val % 2 === 0 ? val : val; 
+            },
           },
           title: { style: { color: "#247BA0" } },
         },
