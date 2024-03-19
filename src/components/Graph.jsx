@@ -38,9 +38,13 @@ const Graph = ({ data }) => {
         yaxis: {
           min: 0,
           max: 8,
-          axisTicks: { show: false, color: "#fff" },
-          axisBorder: { show: false, color: "#fff" },
-          labels: { style: { colors: "#808080" } },
+          tickAmount: 4, // Set the number of ticks
+          labels: { 
+            style: { colors: "#808080" },
+            formatter: function(val) {
+              return val % 2 === 0 ? val : val; // Show only even numbers
+            }
+          },
           title: { style: { color: "#247BA0" } },
         },
         tooltip: {
